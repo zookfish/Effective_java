@@ -49,6 +49,7 @@
 + git remote remove 远程主机   删除一个远端
 + git diff file 查看文件差异
 
+
 + git commit --amend 发现上一次的提交没有提交完全,接着在提交一波
 
 
