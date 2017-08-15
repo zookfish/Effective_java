@@ -31,3 +31,9 @@
 	? 代表一个字符
 	[] 代表集合
  ```
+
++ git branch test 新建分支
++ git branch -d test 删除分支  如果当前head必须指向test
++ git checkout test  切换分支到test
++ git checkout -b test 新建并切换分支
++ git pull origin    
