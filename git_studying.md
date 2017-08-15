@@ -53,6 +53,8 @@
 
 + git commit --amend 继续上一次提交|运行这个命令的前提是你没有push到远端,
 
++ git reflog 查看最近提交的commit id
+
 
 
 
