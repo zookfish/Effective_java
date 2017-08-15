@@ -50,7 +50,9 @@
 + git diff file 查看文件差异
 
 
-+ git commit --amend 发现上一次的提交没有提交完全,接着在提交一波[继续修改,是否能够补充提交msg]
+
++ git commit --amend 继续上一次提交|运行这个命令的前提是你没有push到远端,
+
 
 
 
