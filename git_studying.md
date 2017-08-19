@@ -45,6 +45,7 @@
 + git checkout -b test 新建并切换分支
 + git pull origin 远程分支名:本地分支名  将远程分支master与当前master分支进行合并,如果是与当前分支进行合并,则:master可以省略
 + git push  origin master    将本地master分支提交到远程主机master上
++ git push origin :远程分支  将本地一个空文件推送到远程分支，相当于删除远程分支
 + git remote add 远程主机 url 新增一个远程主机
 + git remote remove 远程主机   删除一个远端
 + git diff file 查看文件差异
