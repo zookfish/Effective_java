@@ -117,3 +117,23 @@
  -rw-r--r-- 
 
 ```
+
+
++ linux文件目录
+	+ boot开机启动
+	+ dev 外接设备
+	+ etc 配置文件
+	+ home 用户主目录
+	+ bin 基本命令
+	+ lib 函数库
+	+ sbin 开机需要用到的
+	+ media 挂在目录
+	+ opt 放置三方软件
+	+ root 系统管理员文件
+	+ srv 网络服务数据
+	+ tmp 临时文件目录
+	+ usr 用户自定义目录
+	+ var 经常变化的目录  日志文件
++ mount 文件系统  挂载目录
++ unmount 文件系统
+
