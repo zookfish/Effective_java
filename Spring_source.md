@@ -9,6 +9,12 @@
 #### AOP的实现
 	+ 利用java的代理和FactoryBean来实现
 
+	+ advice通知
+		+ BeforeAdvice
+		+ AfterAdvice
+	+ pointCut 切点  定义需要通知的点
+	+ advisor 把通知advice和pointcut结合起来
+
 
 #### spring mvc
 	+ 服务器启动的时候触发监听器的init事件
