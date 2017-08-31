@@ -8,8 +8,7 @@
 
 #### AOP的实现
 	+ 利用java的代理和FactoryBean来实现
-
-	+ advice通知
+		getObject()方法初始化拦截器链,创建了代理对象(jdk动态代理/cglib代理,代理里面通过DedaultAdvisorChainFactory#adapter装饰拦截器链),代理对象调用invoke方法(获取拦截器链,递归调用方法实现通知)
 		+ BeforeAdvice
 		+ AfterAdvice
 	+ pointCut 切点  定义需要通知的点

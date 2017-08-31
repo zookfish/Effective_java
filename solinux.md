@@ -50,14 +50,26 @@
 
 + 查找
 	+ grep 查找内容
+		+ grep -A 3 -i "example" demo_file 在文件中查找关键字以及之后的三行
+		+ grep -r "example" * 递归查找
 	+ find 地址 -参数 查找文件
+		+ find -iname "a.js"   查找名称为a.js的文件
  	+ > 输出   man bash > 1.txt   man bash >> 1.txt 追加输入
 	+ < 输入   wc -l < 1.txt
+	+ tail 查看
+		+ tail -n 300 demo.txt 查看文件的最后300行
+		+ tail -f demo.txt  实时查看
 
 + 杂货
 	+ echo `uname -a`  反引号里面的会被linux当做命令来执行
 	+ \$ 会转译
 
+
++ 查看磁盘和内存、进程	
+	+ df    查看磁盘使用情况   df -k -h
+	+ free  查看内存使用
+	+ ps -efH 查看
+	+ kiss -9 进程id 杀死进程  
 + linux的一切都是文件，命令也是文件。执行一条命令
 	+ 如果以绝对/相对路径输入命令则直接执行
 	+ 检查命令是否是别名命令
@@ -109,14 +121,18 @@
 		+ l 连接文件
 		+ c 字符设备文件
 		+ b 块状设备文件
-```
- # - 普通文件  第一个-
- # rw- 文件所有者可读可写  这里的-就是个占位符
- # r-- 文件所在的用户组可读
- # r-- 其它人可读
- -rw-r--r-- 
+	```
+	 # - 普通文件  第一个-
+	 # rw- 文件所有者可读可写  这里的-就是个占位符
+	 # r-- 文件所在的用户组可读
+	 # r-- 其它人可读
+	 -rw-r--r-- 
+	
+	```
+	+ 授权操作
+		+ chown oracle:dba demo.sh 	将demo.sh文件授权给oracle用户dba组
+		+ chmod ug+rwx demo.sh  同时改变文件所属用户和组以及读写执行权限
 
-```
 
 
 + linux文件目录
@@ -137,3 +153,5 @@
 + mount 文件系统  挂载目录
 + unmount 文件系统
 
+
++ 
