@@ -66,7 +66,7 @@
 					+ WEAK 基于垃圾回收和弱引用  相当于 LRU
 
 				+ 自定义缓存实现.上述的缓存都是在本机上,我们可以依赖redis来自定义缓存。只要实现cache接口即可
-					
+
 
 
 				> 二级缓存是sqlSessionFactory级别的,各个session之间是可以共享的
@@ -76,4 +76,11 @@
 		+ \#  $
 			+ \# \#{} 处理参数
 			+ $ 相当于取字符串本身.会有sql安全问题 相当于我定义一个字符串变量,${变量} 就是取值
+
++ mybatis之动态sql
+	
+	+ 组装动态的sql依赖下面常用的标签
+		+ if 非此即彼
+		+ choose when otherwise 相当于 switch case default 只选择其中的一种情况
+		+ 
 
