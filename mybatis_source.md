@@ -27,6 +27,10 @@
 			+ 查询里面的一些子属性
 				+ id 与mapper的namespace组合,全局唯一
 				+ parameterType  类全限定名  别名
+					+ 这里parameterType 接受多参数的三种方式
+						+ 构造一个自定义的bean来接收各种字段  通常首选
+						+ 在mapper接口中使用注解 @param("id") String id 在映射xml文件里面可以使用占位符来接收参数 eg: #{0}
+						+ 使用map接收各种类型
 				+ resultType     类全限定名  别名
 				+ resultMap      自定义映射规则
 				+ flushCache     查询之前是否清空之前查询的本地缓存和为二级缓存
@@ -81,6 +85,37 @@
 	
 	+ 组装动态的sql依赖下面常用的标签
 		+ if 非此即彼
-		+ choose when otherwise 相当于 switch case default 只选择其中的一种情况
-		+ 
+		+ choose when otherwise 相当于 switch case default 只选择其中的一种情况 防止sql出错会加上where 1=1
+		+ <where> 直接用where标签可以解决判断为空的时候sql出错的情况
+		+ <set> 在更新指定字段的时候用到,set会把逗号,给去掉撒
+			```xml
+				<set>
+					<if test="expression">
+						id = #{id},
+					</if>
+					<if test="expression">
+						name = #{name},
+					</if>
+					<if>
+						note = #{note} 
+					</if>
+				</set>
+				where  no = #{no}
+			```
+
+		+ foreach 遍历循环  通常用在in查询里面
+			```xml
+				<foreach item="role" index="index" open="(" seperate="," close=")">
+					#{role}
+				</foreach> 
+			```
+
+		+ bind 在sql语句里面定义一个变量,用于构造一些个性化参数
+			```xml
+				<bind name="pattern" value="'%' + param1 + '%'"/>
+				<!-- 
+					后续就可以在sql语句里面引用pattern代表的值
+				 -->
+
+			```
 
