@@ -56,6 +56,9 @@
 
 + git reflog 查看最近提交的commit id
 
+> 
+	git rm --cached -r "XXX"  把已经提交到git的文件删掉
+
 
 
 
