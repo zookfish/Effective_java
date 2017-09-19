@@ -69,7 +69,8 @@
 	+ df    查看磁盘使用情况   df -k -h
 	+ free  查看内存使用
 	+ ps -efH 查看
-	+ kiss -9 进程id 杀死进程  
+	+ kiss -9 进程id 杀死进程
+	  
 + linux的一切都是文件，命令也是文件。执行一条命令
 	+ 如果以绝对/相对路径输入命令则直接执行
 	+ 检查命令是否是别名命令
@@ -154,4 +155,9 @@
 + unmount 文件系统
 
 
-+ 
++ 拾忆
+	+ 自定义开放端口 
+		+ /etc/sysconfig/iptables
+		+ service iptables restart 使修改的端口生效
+	+ 查看端口占用 
+		+ netstat -anp
