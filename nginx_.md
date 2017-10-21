@@ -47,6 +47,34 @@
 			```
 				sub_filter '原始' '替换后'
 				sub_filter_once on|off 只替换第一个还是全局替换
+
+				--sbin-path=/usr/sbin/nginx --modules-path=/usr/lib64/nginx/modules --conf-path=/etc/nginx/nginx.conf --error-log-path=/var/log/nginx/error.log --http-log-path=/var/log/nginx/access.log --pid-path=/var/run/nginx.pid --lock-path=/var/run/nginx.lock --http-client-body-temp-path=/var/cache/nginx/client_temp --http-proxy-temp-path=/var/cache/nginx/proxy_temp --http-fastcgi-temp-path=/var/cache/nginx/fastcgi_temp --http-uwsgi-temp-path=/var/cache/nginx/uwsgi_temp --http-scgi-temp-path=/var/cache/nginx/scgi_temp --user=nginx --group=nginx --with-compat --with-file-aio --with-threads --with-http_addition_module --with-http_auth_request_module --with-http_dav_module --with-http_flv_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_mp4_module --with-http_random_index_module --with-http_realip_module --with-http_secure_link_module --with-http_slice_module --with-http_ssl_module --with-http_stub_status_module --with-http_sub_module --with-http_v2_module --with-mail --with-mail_ssl_module --with-stream --with-stream_realip_module --with-stream_ssl_module --with-stream_ssl_preread_module --with-cc-opt='-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic -fPIC' --with-ld-opt='-Wl,-z,relro -Wl,-z,now -pie'
 			```
+
+		+ -limit_conn_module   连接请求限制
+
+		+ -limit_req_module    request请求限制
+
+		+ http_access_module   ip连接限制  基于客户端的ip,它只能识别访问的ip.如果客户端通过代理访问,服务端只能识别代理的ip
+		+ http_x_forworded_for 可以改善http_access_module 的局限
+		+ http_auth_basic_module   用户的访问认证
+
+
+	+ nginx的静态web资源服务
+		+ 接受客户端的一些静态资源的请求 (js/css/jpg/txt)
+		+ gzip模块设置压缩
+		+ 设置cache
+		+ 跨域访问    Access-Control-Allow-Origin 请求地址  在服务端设置允许跨域访问的域名
+		+ 防盗链   K.;
+	+ nginx的代理服务
+		+ proxy_pass
+		+ 正向代理
+		+ 反向代理
+
+	+ nginx的负载均衡
+
+		+ 定义upstream 配置proxy_pass 指向配置的upstream。默认的负载是轮询的策略
+
+	+ nginx的动态缓存
 
 

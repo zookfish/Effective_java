@@ -164,4 +164,6 @@
 	+ centos默认使用firewall-cmd来管理端口
 		+ 添加端口  firewall-cmd --zone=public --add-port=80/tcp --permanent
 		+ firewall-cmd --reload 重启
-		+ firewall-cmd --list --ports 查看开放的端口 
+		+ firewall-cmd --list -ports 查看开放的端口
+
+	 
