@@ -18,11 +18,18 @@
 #### spring mvc
 	+ 服务器启动的时候触发监听器的init事件
 		+ 生成根上下文对象，并保存在servletContext中
-
+			+ 准备Applicatition上下文
+			+ 初始化BeanFactory
+			+ 初始化BeanDefination (解析xml中定义的bean)
+			+ 初始化BeanPostProcess 处理器
+			+ 初始化MeassageSource 
+			+ 完成beanDefination的实例(利用反射,初始化的是非懒加载的bean,这里会调用前面的bean后置处理器,bean执行各种操作 )
+			+ 初始化完成 finishRefresh 将实现了Lifecycle接口的bean设置为running
 	+ 初始化dispatherservlet,initStrategies中完成对上传组件(MultipartResolve),请求映射(HandlerMapping),视图解析器的初始化
 		+ HandlerMapping的初始化<就是看HandlerMapping接口 #getHandler>
 			+ 根据url映射注册handler，生成一个map<url->handler>,加上定义好的interceptor，封装为HandlerExecutionChain
 			+ getHandler完成了url到Handler的实例的过程(解析请求url,从map中找到对应的handler.再从容器中拿到对应的实例)
 		+ spring对请求的分发处理
 			+ dispather本身是HttpServlet的子类,doservice里面处理请求的逻辑(根据url取得handler,调用方法得到modelandview,view里面去做页面渲染的逻辑view.render())
+			+ 在调用前执行上面封装的interceptor的前置处理handle方法之后执行后置处理
 			+ 常见的页面解析

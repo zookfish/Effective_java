@@ -31,6 +31,8 @@
 		+ @Configuration 作用于类上，相当于一个xml配置文件；
 		+ @Bean 作用于方法上，相当于xml配置中的<bean>
 	+ 自动配置
-		+ spring-boot-autoconfiguration  扫描包下面/META/spring.factories 配置的类 完成bean的自动生成 
+		+ spring-boot-autoconfiguration  扫描包下面/META/spring.factories 配置的类 完成bean的自动生成  setListeners((Collection) getSpringFactoriesInstances(ApplicationListener.class)); 初始化SpringApplication的时候
+
+ 
 
 
