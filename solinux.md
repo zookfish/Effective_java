@@ -38,7 +38,11 @@
 	+ touch 
 	+ mkdir 创建目录
 	+ cp 源文件 目标文件  复制   cp -r 递归复制
-	+ mv 移动文件
+	+ mv 移动文件 可以重命名文件
+	+ 硬链接和软连接
+		+ 硬链接 指向的是文件里面的数据(删除源文件仍然可用)   ln 源文件  目标文件 
+		+ 软连接指向的文件名(删除源文件不可用)           ln -s 源文件 目标文件
+
 
 + 用户管理
 	+ useradd/userdel/usermod 添加/删除/修改 用户
@@ -54,6 +58,9 @@
 		+ grep -r "example" * 递归查找
 	+ find 地址 -参数 查找文件
 		+ find -iname "a.js"   查找名称为a.js的文件
+		+ find / -size +21k   查找大小大于21kb的文件
+		+ find / -size -21k   小于
+
  	+ > 输出   man bash > 1.txt   man bash >> 1.txt 追加输入
 	+ < 输入   wc -l < 1.txt
 	+ tail 查看
@@ -63,10 +70,14 @@
 + 杂货
 	+ echo `uname -a`  反引号里面的会被linux当做命令来执行
 	+ \$ 会转译
+	+ date +%Y年%m月%d号 查看系统的时间
+	+ cal 查看系统的日历
+	+ chown修改文件所有者 chgrp修改用户组 chomd修改文件的权限 chmod 421 文件名  给文件增加可读可写可执行的权限
 
 
 + 查看磁盘和内存、进程	
 	+ df    查看磁盘使用情况   df -k -h
+	+ du -h 查看当前路径占用的硬盘大小
 	+ free  查看内存使用
 	+ ps -efH 查看
 	+ kiss -9 进程id 杀死进程
