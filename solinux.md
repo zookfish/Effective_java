@@ -166,4 +166,7 @@
 		+ firewall-cmd --reload 重启
 		+ firewall-cmd --list -ports 查看开放的端口
 
+
++ needsomething todo
+
 	 
